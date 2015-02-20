@@ -8,7 +8,7 @@ These are docker images for Minecraft Cauldron running on an
 
 ```
 docker run -v /minecraft/merge -v /minecraft/world -v /minecraft/logs --name minecraft-data busybox true
-docker run -p 25565:25565 -d --volumes-from minecraft-data --name minecraft webhippie/minecraft-cauldron:latest start
+docker run -p 25565:25565 -d --volumes-from minecraft-data --name minecraft webhippie/minecraft-cauldron:1.1207.01 start
 
 # Execute this for further available commands
 docker exec -ti minecraft manage help
