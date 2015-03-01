@@ -14,15 +14,10 @@ ENV SERVER_OPTS nogui
 ENV SERVER_MOTD Minecraft
 ENV SERVER_RCONPWD webhippie
 
-ENV LANG en_US.utf8
-ENV LANGUAGE en_US.utf8
-ENV LC_ALL en_US.utf8
-
 ADD libexec /minecraft/libexec
 
-RUN wget -q -O /minecraft/forge-${MINECRAFT_VERSION}-${FORGE_VERSION}-installer.jar ${CAULDRON_URL}
-RUN wget -q -O /minecraft/cauldronbukkit-${MINECRAFT_VERSION}-${CAULDRON_VERSION}.jar ${BUKKIT_URL}
-RUN cd /minecraft && java -jar forge-${MINECRAFT_VERSION}-${FORGE_VERSION}-installer.jar --installServer
+RUN curl -o /minecraft/forge-${MINECRAFT_VERSION}-${FORGE_VERSION}-installer.jar ${CAULDRON_URL}
+RUN curl -o /minecraft/cauldronbukkit-${MINECRAFT_VERSION}-${CAULDRON_VERSION}.jar ${BUKKIT_URL}
 RUN cd /minecraft && java -jar forge-${MINECRAFT_VERSION}-${FORGE_VERSION}-installer.jar --installServer
 RUN rm -f /minecraft/forge-${MINECRAFT_VERSION}-${FORGE_VERSION}-installer.jar
 
