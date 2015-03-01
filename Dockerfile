@@ -16,8 +16,8 @@ ENV SERVER_RCONPWD webhippie
 
 ADD libexec /minecraft/libexec
 
-RUN curl -o /minecraft/forge-${MINECRAFT_VERSION}-${FORGE_VERSION}-installer.jar ${CAULDRON_URL}
-RUN curl -o /minecraft/cauldronbukkit-${MINECRAFT_VERSION}-${CAULDRON_VERSION}.jar ${BUKKIT_URL}
+RUN curl -o /minecraft/forge-${MINECRAFT_VERSION}-${FORGE_VERSION}-installer.jar ${CAULDRON_URL} 2> /dev/null
+RUN curl -o /minecraft/cauldronbukkit-${MINECRAFT_VERSION}-${CAULDRON_VERSION}.jar ${BUKKIT_URL} 2> /dev/null
 RUN cd /minecraft && java -jar forge-${MINECRAFT_VERSION}-${FORGE_VERSION}-installer.jar --installServer
 RUN rm -f /minecraft/forge-${MINECRAFT_VERSION}-${FORGE_VERSION}-installer.jar
 
