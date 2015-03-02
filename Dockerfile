@@ -19,7 +19,7 @@ ADD libexec /minecraft/libexec
 RUN curl -o /minecraft/cauldron-${MINECRAFT_VERSION}-${CAULDRON_VERSION}-installer.jar ${CAULDRON_URL} 2> /dev/null
 RUN curl -o /minecraft/cauldronbukkit-${MINECRAFT_VERSION}-${CAULDRON_VERSION}.jar ${BUKKIT_URL} 2> /dev/null
 RUN cd /minecraft && java -jar cauldron-${MINECRAFT_VERSION}-${CAULDRON_VERSION}-installer.jar --installServer
-RUN rm -f /minecraft/cauldron-${MINECRAFT_VERSION}-${FORGE_VERSION}-installer.jar
+RUN rm -f /minecraft/cauldron-${MINECRAFT_VERSION}-${CAULDRON_VERSION}-installer.jar
 
 VOLUME ["/minecraft/merge", "/minecraft/world", "/minecraft/logs"]
 
