@@ -2,6 +2,7 @@ FROM webhippie/minecraft-vanilla:1.7.10
 MAINTAINER Thomas Boerger <thomas@webhippie.de>
 
 ENV MINECRAFT_VERSION 1.7.10
+ENV FORGE_VERSION 10.13.2.1291
 ENV CAULDRON_VERSION 1.1207.01.198
 ENV CAULDRON_JAR forge-${MINECRAFT_VERSION}-${FORGE_VERSION}-server.jar
 ENV CAULDRON_URL http://minecraft.maeyanie.com/cauldron/cauldron-${MINECRAFT_VERSION}-${CAULDRON_VERSION}-installer.jar
